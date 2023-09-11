@@ -24,6 +24,10 @@ function onInput(e) {
 
 function onSubmit(e) {
   e.preventDefault();
+  if (data.input.value === '' || data.textArea.value === '') {
+    return alert('All fields must be filled.');
+  }
+
   const removedData = localStorage.removeItem('feedback-form-state');
   e.currentTarget.reset();
   console.log(formData);
